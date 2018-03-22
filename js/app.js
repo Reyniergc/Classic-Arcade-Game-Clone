@@ -1,4 +1,7 @@
 let allEnemies = [];
+let enemy_1 = null;
+let enemy_2 = null;
+let enemy_3 = null;
 let player;
 
 class Enemy {
@@ -61,9 +64,9 @@ document.addEventListener('keyup', function(e) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 
-let enemy_1 = new Enemy("enemy-bug.png", 10, 80);
-let enemy_2 = new Enemy("enemy-bug.png", 200, 180);
-let enemy_3 = new Enemy("enemy-bug.png", 350, 280);
+enemy_1 = new Enemy("enemy-bug.png", 10, 80);
+enemy_2 = new Enemy("enemy-bug.png", 200, 180);
+enemy_3 = new Enemy("enemy-bug.png", 350, 280);
 
 allEnemies.push(enemy_1);
 allEnemies.push(enemy_2);
