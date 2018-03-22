@@ -45,23 +45,6 @@ class Player {
 	}
 }
 
-let enemy_1 = new Enemy("enemy-bug.png", 10, 80);
-let enemy_2 = new Enemy("enemy-bug.png", 200, 180);
-let enemy_3 = new Enemy("enemy-bug.png", 350, 280);
-
-allEnemies.push(enemy_1);
-allEnemies.push(enemy_2);
-allEnemies.push(enemy_3);
-
-player = new Player("char-boy.png", 100, 80);
-
-
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-
-
-
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
@@ -74,3 +57,17 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Now instantiate your objects.
+// Place all enemy objects in an array called allEnemies
+
+let enemy_1 = new Enemy("enemy-bug.png", 10, 80);
+let enemy_2 = new Enemy("enemy-bug.png", 200, 180);
+let enemy_3 = new Enemy("enemy-bug.png", 350, 280);
+
+allEnemies.push(enemy_1);
+allEnemies.push(enemy_2);
+allEnemies.push(enemy_3);
+
+// Place the player object in a variable called player
+player = new Player("char-boy.png", 100, 80);
