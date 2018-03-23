@@ -60,13 +60,13 @@ document.addEventListener('keyup', function(e) {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-enemy_1 = new Enemy("enemy-bug.png", 50, 10, 63);
-enemy_2 = new Enemy("enemy-bug.png", 25, 200, 145);
-enemy_3 = new Enemy("enemy-bug.png", 5, 350, 227);
+enemy_1 = new Enemy("enemy-bug.png", 1, -99, 63);
+enemy_2 = new Enemy("enemy-bug.png", 1, -99, 145);
+enemy_3 = new Enemy("enemy-bug.png", 1, -99, 227);
 
 allEnemies.push(enemy_1);
 allEnemies.push(enemy_2);
 allEnemies.push(enemy_3);
 
 // Place the player object in a variable called player
-player = new Player("char-boy.png", 100, 80);
+player = new Player("char-boy.png", 200, 400);
