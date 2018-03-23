@@ -4,46 +4,43 @@ let enemy_2 = null;
 let enemy_3 = null;
 let player;
 
-class Enemy {
-	constructor(enemy_img_name, coordinate_x, coordinate_y) {
-		this.imgEnemy = "images/" + enemy_img_name;
+class DrawImagesOnCanvas {
+	constructor(img, coordinate_x, coordinate_y) {
 		this.x = coordinate_x;
 		this.y = coordinate_y;
+		this.img = "images/" + img;
 	}
-	
-	// Update the enemy's position, required method for game
-	// Parameter: dt, a time delta between ticks
-	update(dt) {
-		// You should multiply any movement by the dt parameter
-		// which will ensure the game runs at the same speed for
-		// all computers.
-	}
-	
-	
+
 	// Draw the enemy on the screen, required method for game.
 	render() {
-		ctx.drawImage(Resources.get(this.imgEnemy), this.x, this.y);
+		ctx.drawImage(Resources.get(this.img), this.x, this.y);
 	}
 }
 
-class Player {
-	constructor(player_img_name, coordinate_x, coordinate_y) {
-		this.imgPlayer = "images/" + player_img_name;
-		this.x = coordinate_x;
-		this.y = coordinate_y;
+class Enemy extends DrawImagesOnCanvas {
+	constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {
+		super(enemy_img_name, coordinate_x, coordinate_y);
+		this.enemySpeed = enemySpeed;
 	}
-	
+
 	update(dt) {
-		// You should multiply any movement by the dt parameter
-		// which will ensure the game runs at the same speed for
-		// all computers.
+		// You should multiply any movement by the dt parameter which
+		// will ensure the game runs at the same speed for all computers.
+		this.x += this.enemySpeed * dt;
 	}
-	
-	render() {
-		ctx.drawImage(Resources.get(this.imgPlayer), this.x, this.y);
+}
+
+class Player extends DrawImagesOnCanvas {
+	constructor(player_img_name, coordinate_x, coordinate_y) {
+		super(player_img_name, coordinate_x, coordinate_y);
 	}
-	
-	handleInput() {
+
+	update(dt) {
+		// You should multiply any movement by the dt parameter which
+		// will ensure the game runs at the same speed for all computers.
+	}
+
+	handleInput(move) {
 		
 	}
 }
@@ -63,10 +60,9 @@ document.addEventListener('keyup', function(e) {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-
-enemy_1 = new Enemy("enemy-bug.png", 10, 80);
-enemy_2 = new Enemy("enemy-bug.png", 200, 180);
-enemy_3 = new Enemy("enemy-bug.png", 350, 280);
+enemy_1 = new Enemy("enemy-bug.png", 50, 10, 63);
+enemy_2 = new Enemy("enemy-bug.png", 25, 200, 145);
+enemy_3 = new Enemy("enemy-bug.png", 5, 350, 227);
 
 allEnemies.push(enemy_1);
 allEnemies.push(enemy_2);
