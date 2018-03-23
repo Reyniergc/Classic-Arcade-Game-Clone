@@ -77,7 +77,7 @@ class Player extends DrawImagesOnCanvas {
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+/*document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -86,7 +86,7 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
-});
+});*/
 
 document.addEventListener('keydown', function(e) {
     var allowedKeys = {
@@ -110,4 +110,4 @@ allEnemies.push(enemy_2);
 allEnemies.push(enemy_3);
 
 // Place the player object in a variable called player
-player = new Player("char-boy.png", 200, 400);
+player = new Player("char-cat-girl.png", 200, 400);
