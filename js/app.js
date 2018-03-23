@@ -40,7 +40,9 @@ class Player extends DrawImagesOnCanvas {
 	}
 
 	update(dt) {
-		
+		if (this.y < 0) {
+			this.y = 400;
+		}
 	}
 
 	handleInput(keyboardMov) {
