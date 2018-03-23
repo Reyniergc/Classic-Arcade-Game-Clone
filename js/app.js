@@ -26,6 +26,10 @@ class Enemy extends DrawImagesOnCanvas {
 	update(dt) {
 		// You should multiply any movement by the dt parameter which
 		// will ensure the game runs at the same speed for all computers.
+		if (this.x > 700) {
+			this.x = -99;
+		}
+		
 		this.x += this.enemySpeed * dt;
 	}
 }
@@ -43,25 +47,25 @@ class Player extends DrawImagesOnCanvas {
 		switch (keyboardMov) {
 			case "left": {
 				if (this.x > -17) {
-					this.x -= 1;
+					this.x -= 3;
 				}
 				break;
 			}
 			case "right": {
 				if (this.x < 420) {
-					this.x += 1;
+					this.x += 3;
 				}
 				break;
 			}
 			case "up": {
 				if (this.y > 0) {
-					this.y -= 1;
+					this.y -= 3;
 				}
 				break;
 			}
 			case "down": {
 				if (this.y < 405) {
-					this.y += 1;
+					this.y += 3;
 				}
 			}
 		}
@@ -94,9 +98,9 @@ document.addEventListener('keydown', function(e) {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-enemy_1 = new Enemy("enemy-bug.png", 1, -99, 63);
-enemy_2 = new Enemy("enemy-bug.png", 1, -99, 145);
-enemy_3 = new Enemy("enemy-bug.png", 1, -99, 227);
+enemy_1 = new Enemy("enemy-bug.png", 110, -99, 63);
+enemy_2 = new Enemy("enemy-bug.png", 120, -99, 145);
+enemy_3 = new Enemy("enemy-bug.png", 100, -99, 227);
 
 allEnemies.push(enemy_1);
 allEnemies.push(enemy_2);
