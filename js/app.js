@@ -36,12 +36,35 @@ class Player extends DrawImagesOnCanvas {
 	}
 
 	update(dt) {
-		// You should multiply any movement by the dt parameter which
-		// will ensure the game runs at the same speed for all computers.
+		
 	}
 
-	handleInput(move) {
-		
+	handleInput(keyboardMov) {
+		switch (keyboardMov) {
+			case "left": {
+				if (this.x > -17) {
+					this.x -= 1;
+				}
+				break;
+			}
+			case "right": {
+				if (this.x < 420) {
+					this.x += 1;
+				}
+				break;
+			}
+			case "up": {
+				if (this.y > 0) {
+					this.y -= 1;
+				}
+				break;
+			}
+			case "down": {
+				if (this.y < 405) {
+					this.y += 1;
+				}
+			}
+		}
 	}
 }
 
