@@ -41,6 +41,7 @@ class Player extends DrawImagesOnCanvas {
 
 	update(dt) {
 		if (this.y < 0) {
+			this.x = 200;
 			this.y = 400;
 		}
 	}
