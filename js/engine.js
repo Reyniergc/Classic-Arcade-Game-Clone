@@ -67,6 +67,48 @@ var Engine = (function(global) {
         lastTime = Date.now();
         main();
     }
+	
+	function resetPlayer() {
+		player.x = 200;
+		player.y = 400;
+	}
+	
+	function isCollisions(enemyObj, player) {
+		if (((Math.trunc(enemyObj.x) >= 0) && (Math.trunc(enemyObj.x) < 100))
+			&& ((player.x >= 0) && (player.x < 100))) {
+			resetPlayer();
+		}
+		else if (((Math.trunc(enemyObj.x) >= 100) && (Math.trunc(enemyObj.x) < 200))
+			&& ((player.x >= 100) && (player.x < 200))) {
+			resetPlayer();
+		}
+		else if (((Math.trunc(enemyObj.x) >= 200) && (Math.trunc(enemyObj.x) < 300))
+			&& ((player.x >= 200) && (player.x < 300))) {
+			resetPlayer();
+		}
+		else if (((Math.trunc(enemyObj.x) >= 300) && (Math.trunc(enemyObj.x) < 400))
+			&& ((player.x >= 300) && (player.x < 400))) {
+			resetPlayer();
+		}
+		else if ((Math.trunc(enemyObj.x) >= 400) && (player.x >= 400)) {
+			resetPlayer();
+		}
+	}
+	
+	function checkCollisions() {
+		for (let index = 0; index < allEnemies.length; index++) {
+			let enemyObj = allEnemies[index];
+			if (((enemyObj.y >= 0) && (enemyObj.y < 100)) && ((player.y >= 0) && (player.y < 100))) {
+				isCollisions(enemyObj, player);
+			}
+			else if (((enemyObj.y >= 100) && (enemyObj.y < 200)) && ((player.y >= 100) && (player.y < 200))) {
+				isCollisions(enemyObj, player);
+			}
+			else if (((enemyObj.y >= 200) && (enemyObj.y < 300)) && ((player.y >= 200) && (player.y <= 300))) {
+				isCollisions(enemyObj, player);
+			}
+		}
+	}
 
     /* This function is called by main (our game loop) and itself calls all
      * of the functions which may need to update entity's data. Based on how
@@ -79,7 +121,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
