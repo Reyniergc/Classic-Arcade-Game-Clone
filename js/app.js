@@ -49,26 +49,26 @@ class Player extends DrawImagesOnCanvas {
 	handleInput(keyboardMov) {
 		switch (keyboardMov) {
 			case "left": {
-				if (this.x > -17) {
-					this.x -= 3;
+				if (this.x > 0) {
+					this.x -= 100;
 				}
 				break;
 			}
 			case "right": {
-				if (this.x < 420) {
-					this.x += 3;
+				if (this.x < 400) {
+					this.x += 100;
 				}
 				break;
 			}
 			case "up": {
 				if (this.y > 0) {
-					this.y -= 3;
+					this.y -= 90;
 				}
 				break;
 			}
 			case "down": {
-				if (this.y < 405) {
-					this.y += 3;
+				if (this.y < 400) {
+					this.y += 90;
 				}
 			}
 		}
@@ -77,18 +77,7 @@ class Player extends DrawImagesOnCanvas {
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-/*document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
-    };
-
-    player.handleInput(allowedKeys[e.keyCode]);
-});*/
-
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
