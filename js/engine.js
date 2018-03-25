@@ -76,23 +76,24 @@ var Engine = (function(global) {
 	}
 	
 	function isCollisions(enemyObj, player) {
-		if (((Math.trunc(enemyObj.x) >= 0) && (Math.trunc(enemyObj.x) < 100))
+		if (((Math.trunc(enemyObj.x) <= -25) && (Math.trunc(enemyObj.x) < 100))
 			&& ((player.x >= 0) && (player.x < 100))) {
 			resetPlayer();
 		}
-		else if (((Math.trunc(enemyObj.x) >= 100) && (Math.trunc(enemyObj.x) < 200))
+		else if (((Math.trunc(enemyObj.x) >= 60) && (Math.trunc(enemyObj.x) < 200))
 			&& ((player.x >= 100) && (player.x < 200))) {
 			resetPlayer();
 		}
-		else if (((Math.trunc(enemyObj.x) >= 200) && (Math.trunc(enemyObj.x) < 300))
+		else if (((Math.trunc(enemyObj.x) >= 160) && (Math.trunc(enemyObj.x) < 300))
 			&& ((player.x >= 200) && (player.x < 300))) {
 			resetPlayer();
 		}
-		else if (((Math.trunc(enemyObj.x) >= 300) && (Math.trunc(enemyObj.x) < 400))
+		else if (((Math.trunc(enemyObj.x) >= 260) && (Math.trunc(enemyObj.x) < 400))
 			&& ((player.x >= 300) && (player.x < 400))) {
 			resetPlayer();
 		}
-		else if ((Math.trunc(enemyObj.x) >= 400) && (player.x >= 400)) {
+		else if (((Math.trunc(enemyObj.x) >= 360) && (Math.trunc(enemyObj.x) < 400))
+			&& (player.x >= 400)) {
 			resetPlayer();
 		}
 	}
