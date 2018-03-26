@@ -5,8 +5,11 @@ let enemy_3 = null;
 let enemy_4 = null;
 let enemy_5 = null;
 let enemy_6 = null;
-let player;
+let player = null;
 let ejecuteGame = false;
+let playerWins = 0;
+let createObject = true;
+
 
 class DrawImagesOnCanvas {
 	constructor(img, coordinate_x, coordinate_y) {
@@ -47,6 +50,14 @@ class Player extends DrawImagesOnCanvas {
 		if (this.y < 0) {
 			this.x = 200;
 			this.y = 400;
+			++playerWins;
+		}
+		
+		if (playerWins === 1) {
+			playerWins = 0;
+			document.getElementById("modalBody").innerHTML  = "Congratulations!!! You Won the game!!!";
+			document.getElementsByClassName("container")[0].style.visibility = "hidden";
+			showModal();
 		}
 	}
 
@@ -92,42 +103,48 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+function showModal() {
+	$('#myModal').modal({
+		backdrop: 'static',
+		keyboard: false
+	});
+}
+showModal();
 
-$('#myModal').modal({
-	backdrop: 'static',
-	keyboard: false
-});
-
+// Now instantiate your objects.
+// Place all enemy objects in an array called allEnemies
 function startGame() {
-	let img_player_name;
-	let img = document.getElementsByName("img_player_name");
+	if (createObject) {
+		let img_player_name;
+		let img = document.getElementsByName("img_player_name");
 
-	for (let index = 0; index < img.length; index++) {
-		if (img[index].checked) {
-			img_player_name = img[index].value;
-			break;
+		for (let index = 0; index < img.length; index++) {
+			if (img[index].checked) {
+				img_player_name = img[index].value;
+				break;
+			}
 		}
+
+		enemy_1 = new Enemy("enemy-bug.png", 155, -320, 63);
+		enemy_2 = new Enemy("enemy-bug.png", 130, -200, 145);
+		enemy_3 = new Enemy("enemy-bug.png", 140, -500, 227);
+		
+		enemy_4 = new Enemy("enemy-bug.png", 155, -29, 63);
+		enemy_5 = new Enemy("enemy-bug.png", 130, -5, 145);
+		enemy_6 = new Enemy("enemy-bug.png", 138, -99, 227);
+
+		allEnemies.push(enemy_1);
+		allEnemies.push(enemy_2);
+		allEnemies.push(enemy_3);
+		allEnemies.push(enemy_4);
+		allEnemies.push(enemy_5);
+		allEnemies.push(enemy_6);
+
+		// Place the player object in a variable called player
+		player = new Player(img_player_name, 200, 400);
+		createObject = false;
+		ejecuteGame = true;
 	}
 
-	// Now instantiate your objects.
-	// Place all enemy objects in an array called allEnemies
-	enemy_1 = new Enemy("enemy-bug.png", 155, -320, 63);
-	enemy_2 = new Enemy("enemy-bug.png", 130, -200, 145);
-	enemy_3 = new Enemy("enemy-bug.png", 140, -500, 227);
-	
-	enemy_4 = new Enemy("enemy-bug.png", 155, -29, 63);
-	enemy_5 = new Enemy("enemy-bug.png", 130, -5, 145);
-	enemy_6 = new Enemy("enemy-bug.png", 138, -99, 227);
-
-	allEnemies.push(enemy_1);
-	allEnemies.push(enemy_2);
-	allEnemies.push(enemy_3);
-	allEnemies.push(enemy_4);
-	allEnemies.push(enemy_5);
-	allEnemies.push(enemy_6);
-
-	// Place the player object in a variable called player
-	player = new Player(img_player_name, 200, 400);
-	ejecuteGame = true;
 	$('#myModal').modal('hide');
 }
