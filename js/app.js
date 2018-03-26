@@ -2,6 +2,9 @@ let allEnemies = [];
 let enemy_1 = null;
 let enemy_2 = null;
 let enemy_3 = null;
+let enemy_4 = null;
+let enemy_5 = null;
+let enemy_6 = null;
 let player;
 let ejecuteGame = false;
 
@@ -108,16 +111,22 @@ function startGame() {
 
 	// Now instantiate your objects.
 	// Place all enemy objects in an array called allEnemies
-	enemy_1 = new Enemy("enemy-bug.png", 145, -99, 63);
-	enemy_2 = new Enemy("enemy-bug.png", 130, -99, 145);
-	enemy_3 = new Enemy("enemy-bug.png", 135, -99, 227);
+	enemy_1 = new Enemy("enemy-bug.png", 155, -320, 63);
+	enemy_2 = new Enemy("enemy-bug.png", 130, -200, 145);
+	enemy_3 = new Enemy("enemy-bug.png", 140, -500, 227);
+	
+	enemy_4 = new Enemy("enemy-bug.png", 155, -29, 63);
+	enemy_5 = new Enemy("enemy-bug.png", 130, -5, 145);
+	enemy_6 = new Enemy("enemy-bug.png", 138, -99, 227);
 
 	allEnemies.push(enemy_1);
 	allEnemies.push(enemy_2);
 	allEnemies.push(enemy_3);
+	allEnemies.push(enemy_4);
+	allEnemies.push(enemy_5);
+	allEnemies.push(enemy_6);
 
 	// Place the player object in a variable called player
-	//player = new Player("char-cat-girl.png", 200, 400);
 	player = new Player(img_player_name, 200, 400);
 	ejecuteGame = true;
 	$('#myModal').modal('hide');
