@@ -140,7 +140,6 @@ var Engine = (function(global) {
         });
 		
         player.update();
-		
 		objBonus.checkBonus();
     }
 
@@ -225,7 +224,9 @@ var Engine = (function(global) {
         'images/char-boy.png',
 		'images/char-cat-girl.png',
 		'images/char-princess-girl.png',
-		'images/gem-blue.png'
+		'images/gem-blue.png',
+		'images/gem-orange.png',
+		'images/star.png'
     ]);
     Resources.onReady(init);
 	

@@ -13,8 +13,8 @@ let bonus = 0;
 let randomNumKey = Math.floor((Math.random() * 15) + 1);
 let createObject = true;
 let clear;
-let coordinateObj = {1: [0, 63], 2: [100, 63], 3: [200, 63], 4: [300, 63], 5: [400, 63], 6: [0, 145], 7: [100, 145], 
-8: [0, 145], 9: [300, 145], 10: [400, 145], 11: [0, 227], 12: [100, 227], 13: [200, 227], 14: [300, 227], 15: [400, 227]}
+let coordinateObj = {1: [0, 63, "gem-blue.png"], 2: [100, 63, "gem-orange.png"], 3: [200, 63, "star.png"], 4: [300, 63, "gem-orange.png"], 5: [400, 63, "gem-blue.png"], 6: [0, 145, "star.png"], 7: [100, 145, "star.png"], 
+8: [0, 145, "gem-orange.png"], 9: [300, 145, "star.png"], 10: [400, 145, "gem-orange.png"], 11: [0, 227, "gem-blue.png"], 12: [100, 227, "gem-blue.png"], 13: [200, 227, "gem-blue.png"], 14: [300, 227, "gem-orange.png"], 15: [400, 227, "star.png"]}
 
 
 class DrawImagesOnCanvas {
@@ -151,6 +151,7 @@ class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
 	update(array) {
 		this.x = array[0];
 		this.y = array[1];
+		this.img = "images/" + array[2];
 	}
 }
 
