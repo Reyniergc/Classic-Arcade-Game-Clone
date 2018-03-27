@@ -138,7 +138,10 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
+		
         player.update();
+		
+		objBonus.checkBonus();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -199,6 +202,7 @@ var Engine = (function(global) {
         });
 
         player.render();
+		objBonus.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -220,7 +224,8 @@ var Engine = (function(global) {
         'images/enemy-bug.png',
         'images/char-boy.png',
 		'images/char-cat-girl.png',
-		'images/char-princess-girl.png'
+		'images/char-princess-girl.png',
+		'images/gem-blue.png'
     ]);
     Resources.onReady(init);
 	
