@@ -103,33 +103,42 @@ class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
 		super(player_img_name, coordinate_x, coordinate_y);
 	}
 
-	resetRandomImg() {
-		bonus += 5;
+	resetRandomImg(img) {
+		if (img === "gem-blue.png") {
+			bonus += 5;
+		}
+		else if (img === "gem-orange.png") {
+			bonus += 10;
+		}
+		else { // STAR.
+			bonus += 15;
+		}
+
 		document.getElementById("bonus").innerHTML = bonus;
 		this.x = -99;
 		this.y = -99;
 		randomNumKey = 0;
 	}
 
-	playerGetBonnus(coordinate_x) {
+	playerGetBonnus(coordinate_x, img, player) {
 		if (((coordinate_x >= 0) && (coordinate_x < 100))
 			&& ((player.x >= 0) && (player.x < 100))) {
-			this.resetRandomImg();
+			this.resetRandomImg(img);
 		}
 		else if (((coordinate_x >= 100) && (coordinate_x < 200))
 			&& ((player.x >= 100) && (player.x < 200))) {
-			this.resetRandomImg();
+			this.resetRandomImg(img);
 		}
 		else if (((coordinate_x >= 200) && (coordinate_x < 300))
 			&& ((player.x >= 200) && (player.x < 300))) {
-			this.resetRandomImg();
+			this.resetRandomImg(img);
 		}
 		else if (((coordinate_x >= 300) && (coordinate_x < 400))
 			&& ((player.x >= 300) && (player.x < 400))) {
-			this.resetRandomImg();
+			this.resetRandomImg(img);
 		}
 		else if ((coordinate_x >= 400) && (player.x >= 400)) {
-			this.resetRandomImg();
+			this.resetRandomImg(img);
 		}
 	}
 	
@@ -137,13 +146,13 @@ class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
 		if (randomNumKey > 0) {
 			let array = coordinateObj[randomNumKey];
 			if (((array[1] >= 0) && (array[1] < 100)) && ((player.y >= 0) && (player.y < 100))) {
-				this.playerGetBonnus(array[0], player);
+				this.playerGetBonnus(array[0], array[2], player);
 			}
 			else if (((array[1] >= 100) && (array[1] < 200)) && ((player.y >= 100) && (player.y < 200))) {
-				this.playerGetBonnus(array[0], player);
+				this.playerGetBonnus(array[0], array[2], player);
 			}
 			else if (((array[1] >= 200) && (array[1] <= 300)) && ((player.y >= 200) && (player.y <= 300))) {
-				this.playerGetBonnus(array[0], player);
+				this.playerGetBonnus(array[0], array[2], player);
 			}
 		}
 	}
