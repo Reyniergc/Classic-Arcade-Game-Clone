@@ -10,6 +10,9 @@ let objBonus = null;
 let ejecuteGame = false;
 let playerWins = 0;
 let bonus = 0;
+let pointsStar = 0;
+let pointsBlueRuby = 0;
+let pointsYellowRuby = 0;
 let randomNumKey = Math.floor((Math.random() * 15) + 1);
 let createObject = true;
 let clear;
@@ -59,12 +62,22 @@ class Player extends DrawImagesOnCanvas {
 			++playerWins;
 		}
 		
-		if (playerWins === 1) {
-			playerWins = 0;
-			bonus = 0;
+		if (playerWins === 3) {
 			document.getElementById("bonus").innerHTML = 0;
 			document.getElementById("modalBody").innerHTML  = "Congratulations!!! You Won the game!!!";
 			document.getElementsByClassName("container")[0].style.visibility = "hidden";
+
+			document.getElementById("td1_star").innerHTML = pointsStar;
+			document.getElementById("td2_ruby_yellow").innerHTML = pointsYellowRuby;
+			document.getElementById("td3_ruby_blue").innerHTML = pointsBlueRuby;
+			document.getElementById("td4_total_bonus").innerHTML = bonus;
+
+			playerWins = 0;
+			pointsStar = 0;
+			pointsYellowRuby = 0;
+			pointsBlueRuby = 0;
+			bonus = 0;
+
 			showModal();
 		}
 	}
@@ -105,13 +118,16 @@ class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
 
 	resetRandomImg(img) {
 		if (img === "gem-blue.png") {
+			pointsBlueRuby += 5;
 			bonus += 5;
 		}
 		else if (img === "gem-orange.png") {
+			pointsYellowRuby += 10;
 			bonus += 10;
 		}
 		else { // STAR.
 			bonus += 15;
+			pointsStar += 15;
 		}
 
 		document.getElementById("bonus").innerHTML = bonus;
