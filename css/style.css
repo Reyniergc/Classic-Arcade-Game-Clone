@@ -16,6 +16,7 @@ body {
 	animation: blink 1s infinite;
 	color: rgb (0, 137, 226);
 	font-size: 24px;
+	text-shadow: 1px 3px 5px #FF0000;
 }
 
 @keyframes blink {
