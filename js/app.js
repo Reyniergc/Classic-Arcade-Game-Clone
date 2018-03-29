@@ -62,7 +62,7 @@ class Player extends DrawImagesOnCanvas {
 			++playerWins;
 		}
 		
-		if (playerWins === 3) {
+		if (playerWins === 2) {
 			document.getElementById("bonus").innerHTML = 0;
 			document.getElementById("modalBody").innerHTML  = "Congratulations!!! You Won the game!!!";
 			document.getElementsByClassName("container")[0].style.visibility = "hidden";
