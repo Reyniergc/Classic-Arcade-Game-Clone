@@ -16,8 +16,8 @@ let pointsYellowRuby = 0;
 let randomNumKey = Math.floor((Math.random() * 15) + 1);
 let createObject = true;
 let clear;
-let coordinateObj = {1: [0, 63, "gem-blue.png"], 2: [100, 63, "gem-orange.png"], 3: [200, 63, "star.png"], 4: [300, 63, "gem-orange.png"], 5: [400, 63, "gem-blue.png"], 6: [0, 145, "star.png"], 7: [100, 145, "star.png"], 
-8: [0, 145, "gem-orange.png"], 9: [300, 145, "star.png"], 10: [400, 145, "gem-orange.png"], 11: [0, 227, "gem-blue.png"], 12: [100, 227, "gem-blue.png"], 13: [200, 227, "gem-blue.png"], 14: [300, 227, "gem-orange.png"], 15: [400, 227, "star.png"]}
+let coordinateObj = {1: [0, 63, "Heart.png"], 2: [100, 63, "gem-orange.png"], 3: [200, 63, "star.png"], 4: [300, 63, "gem-orange.png"], 5: [400, 63, "gem-blue.png"], 6: [0, 145, "star.png"], 7: [100, 145, "star.png"],
+8: [0, 145, "gem-orange.png"], 9: [300, 145, "star.png"], 10: [400, 145, "gem-orange.png"], 11: [0, 227, "gem-blue.png"], 12: [100, 227, "Heart.png"], 13: [200, 227, "gem-blue.png"], 14: [300, 227, "Heart.png"], 15: [400, 227, "star.png"]}
 
 
 class DrawImagesOnCanvas {
@@ -51,8 +51,26 @@ class Enemy extends DrawImagesOnCanvas {
 }
 
 class Player extends DrawImagesOnCanvas {
-	constructor(player_img_name, coordinate_x, coordinate_y) {
+	constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {
 		super(player_img_name, coordinate_x, coordinate_y);
+		this.numberOfLives = numberOfLives;
+	}
+
+	resetVariables() {
+		document.getElementById("td1_star").innerHTML = pointsStar;
+		document.getElementById("td2_ruby_yellow").innerHTML = pointsYellowRuby;
+		document.getElementById("td3_ruby_blue").innerHTML = pointsBlueRuby;
+		document.getElementById("td4_total_bonus").innerHTML = bonus;
+
+		playerWins = 0;
+		pointsStar = 0;
+		pointsYellowRuby = 0;
+		pointsBlueRuby = 0;
+		bonus = 0;
+		this.numberOfLives = 3;
+		document.getElementById("lives").innerHTML = this.getNumberOfLives();
+
+		showModal();
 	}
 
 	update(dt) {
@@ -62,23 +80,17 @@ class Player extends DrawImagesOnCanvas {
 			++playerWins;
 		}
 		
+		if (this.getNumberOfLives() + 1 === 1) {
+			document.getElementById("modalBody").innerHTML = "GAME OVER!!!";
+			document.getElementById("lives").innerHTML = 3;
+			this.resetVariables();
+		}
+		
 		if (playerWins === 2) {
 			document.getElementById("bonus").innerHTML = 0;
-			document.getElementById("modalBody").innerHTML  = "Congratulations!!! You Won the game!!!";
+			document.getElementById("modalBody").innerHTML = "Congratulations!!! You Won the game!!!";
 			document.getElementsByClassName("container")[0].style.visibility = "hidden";
-
-			document.getElementById("td1_star").innerHTML = pointsStar;
-			document.getElementById("td2_ruby_yellow").innerHTML = pointsYellowRuby;
-			document.getElementById("td3_ruby_blue").innerHTML = pointsBlueRuby;
-			document.getElementById("td4_total_bonus").innerHTML = bonus;
-
-			playerWins = 0;
-			pointsStar = 0;
-			pointsYellowRuby = 0;
-			pointsBlueRuby = 0;
-			bonus = 0;
-
-			showModal();
+			this.resetVariables();
 		}
 	}
 
@@ -109,6 +121,18 @@ class Player extends DrawImagesOnCanvas {
 			}
 		}
 	}
+	
+	increaseNumberOfLives() {
+		++this.numberOfLives;
+	}
+	
+	decreaseNumberOfLives() {
+		--this.numberOfLives;
+	}
+	
+	getNumberOfLives() {
+		return this.numberOfLives;
+	}
 }
 
 class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
@@ -125,11 +149,15 @@ class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
 			pointsYellowRuby += 10;
 			bonus += 10;
 		}
-		else { // STAR.
+		else if (img === "star.png") {
 			bonus += 15;
 			pointsStar += 15;
 		}
+		else { // Heart.
+			player.increaseNumberOfLives();
+		}
 
+		document.getElementById("lives").innerHTML = player.getNumberOfLives();
 		document.getElementById("bonus").innerHTML = bonus;
 		this.x = -99;
 		this.y = -99;
@@ -231,7 +259,7 @@ function startGame() {
 		allEnemies.push(enemy_6);
 
 		// Place the player object in a variable called player
-		player = new Player(img_player_name, 200, 400);
+		player = new Player(img_player_name, 200, 400, 3);
 		
 		objBonus = new DrawRandomImagesOnCanvas("gem-blue.png", -99, -99);
 

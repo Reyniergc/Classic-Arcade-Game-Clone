@@ -73,6 +73,8 @@ var Engine = (function(global) {
 	function resetPlayer() {
 		player.x = 200;
 		player.y = 400;
+		player.decreaseNumberOfLives();
+		document.getElementById("lives").innerHTML = player.getNumberOfLives();
 	}
 	
 	function isCollisions(enemyObj, player) {
@@ -226,7 +228,8 @@ var Engine = (function(global) {
 		'images/char-princess-girl.png',
 		'images/gem-blue.png',
 		'images/gem-orange.png',
-		'images/star.png'
+		'images/star.png',
+		'images/Heart.png'
     ]);
     Resources.onReady(init);
 	
