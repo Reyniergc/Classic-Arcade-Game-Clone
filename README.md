@@ -3,7 +3,7 @@ Project realized during the Udacity Front-End Nano Degree
 
 **_In this link you can play the game if you want._** [Play Now!!!](https://reyniergc.github.io/Classic-Arcade-Game-Clone/)
 
-Main goal of the project memory card.
+**Main goal of the project memory card.**
 
 The main goal of this project is to create a friendly game where the players can move inside a grid and try to avoid the 
 enemies to reaches the water blue zone. To win the game the player should reach the blue zone 2 times without collisions with
