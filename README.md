@@ -35,7 +35,7 @@ JavaScript objects builded using EcmaScript 6.
 This class is used to draw the enemies, player, hearts and the random jewels on the canvas in a determinate coordinate (x, y)
 **__class DrawImagesOnCanvas {}__*
 
-The enemy class draw the enemies on the canvas. Receive four parameters for the constructor.
+The enemy class draws the enemies on the canvas. The constructor receives four parameters.
 
 constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {}
 __enemy_img_name__ Represent the image to draw the enemies
@@ -46,7 +46,7 @@ __coordinate_y__   The coordinate y where the enemy will be drawn
 - **__class Enemy extends DrawImagesOnCanvas {}__**
 
 
-The player class draw the player on the canvas. Receive four parameters for the constructor.
+The player class draws the player on the canvas. The constructor receives four parameters.
 
 constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {}
 __player_img_name__  Represent the image to draw the player
@@ -57,7 +57,7 @@ __numberOfLives__    Represent the number of lives available of the player
 **__class Player extends DrawImagesOnCanvas {}__**
 
 
-The DrawRandomImagesOnCanvas class draw the bonus points and the extra life (heart) randomly.
+The DrawRandomImagesOnCanvas class draws the bonus points and the extra life (heart) randomly.
 
 constructor(bonus_img_name, coordinate_x, coordinate_y) {}
 __bonus_img_name__   Represent the image to draw the bonus
@@ -66,6 +66,6 @@ __coordinate_y__     The coordinate y where the bonus will be drawn
 
 **__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
 
-**Please Note**: The enemy, player and DrawRandomImagesOnCanvas class use the super class DrawImagesOnCanvas and inherit the public
+**Please Note**: The enemy, player and DrawRandomImagesOnCanvas class uses the super class DrawImagesOnCanvas and inherits the public
 methods and attributes of the super class to draw the enemy, player and the jewels on canvas.
 
