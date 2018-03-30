@@ -35,10 +35,10 @@ This class is used to draw the enemies, player, hearts and the random jewels on 
 The enemy class draws the enemies on the canvas. The constructor receives four parameters.
 
 constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {}
-__enemy_img_name__ Represent the image to draw the enemies
-__enemySpeed__     The velocity that the enemies are drawn on the canvas
-__coordinate_x__   The coordinate x where the enemy will be drawn
-__coordinate_y__   The coordinate y where the enemy will be drawn
+- __enemy_img_name__ Represent the image to draw the enemies
+- __enemySpeed__     The velocity that the enemies are drawn on the canvas
+- __coordinate_x__   The coordinate x where the enemy will be drawn
+- __coordinate_y__   The coordinate y where the enemy will be drawn
 
 - **__class Enemy extends DrawImagesOnCanvas {}__**
 
@@ -46,10 +46,10 @@ __coordinate_y__   The coordinate y where the enemy will be drawn
 The player class draws the player on the canvas. The constructor receives four parameters.
 
 constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {}
-__player_img_name__  Represent the image to draw the player
-__coordinate_x__     The coordinate x where the player will be drawn
-__coordinate_y__     The coordinate y where the player will be drawn
-__numberOfLives__    Represent the number of lives available of the player
+- __player_img_name__  Represent the image to draw the player
+- __coordinate_x__     The coordinate x where the player will be drawn
+- __coordinate_y__     The coordinate y where the player will be drawn
+- __numberOfLives__    Represent the number of lives available of the player
 
 - **__class Player extends DrawImagesOnCanvas {}__**
 
@@ -57,9 +57,9 @@ __numberOfLives__    Represent the number of lives available of the player
 The DrawRandomImagesOnCanvas class draws the bonus points and the extra life (heart) randomly.
 
 constructor(bonus_img_name, coordinate_x, coordinate_y) {}
-__bonus_img_name__   Represent the image to draw the bonus
-__coordinate_x__     The coordinate x where the bonus will be drawn
-__coordinate_y__     The coordinate y where the bonus will be drawn
+- __bonus_img_name__   Represent the image to draw the bonus
+- __coordinate_x__     The coordinate x where the bonus will be drawn
+- __coordinate_y__     The coordinate y where the bonus will be drawn
 
 - **__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
 
