@@ -25,7 +25,7 @@ Css Files:
 
 A bootstrap modal is used to give the player the possibility to choose a type of player at the beginning of the game, to congratulate the player and also to show a message when the player loses all lives. The modal also includes a button to close the modal and another one to restart the game.
 
-JAVASCRIPT CLASSES AND METHODS EXPLANATION
+**__JAVASCRIPT CLASSES AND METHODS EXPLANATION__**
 
 The program was builded using POO. The enemies, player and the random bonus that appears on the grid are both
 JavaScript objects builded using EcmaScript 6.
