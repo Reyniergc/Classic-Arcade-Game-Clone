@@ -57,6 +57,7 @@ class Player extends DrawImagesOnCanvas {
 	}
 
 	resetVariables() {
+		document.getElementById("bonus").innerHTML = 0;
 		document.getElementById("td1_star").innerHTML = pointsStar;
 		document.getElementById("td2_ruby_yellow").innerHTML = pointsYellowRuby;
 		document.getElementById("td3_ruby_blue").innerHTML = pointsBlueRuby;
@@ -87,7 +88,6 @@ class Player extends DrawImagesOnCanvas {
 		}
 		
 		if (playerWins === 2) {
-			document.getElementById("bonus").innerHTML = 0;
 			document.getElementById("modalBody").innerHTML = "Congratulations!!! You Won the game!!!";
 			document.getElementsByClassName("container")[0].style.visibility = "hidden";
 			this.resetVariables();
