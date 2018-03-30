@@ -27,7 +27,7 @@ A bootstrap modal is used to give the player the possibility to choose a type of
 
 **__JAVASCRIPT CLASSES AND METHODS EXPLANATION__**
 
-The program was builded using POO. The enemies, player and the random bonus that appears on the grid are both
+The program was builded using **object oriented programming POO**. The enemies, player and the random bonus that appears on the grid are both
 JavaScript objects builded using EcmaScript 6.
 
 This class is used to draw the enemies, player, hearts and the random jewels on the canvas in a determinate coordinate (x, y)
