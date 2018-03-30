@@ -33,7 +33,7 @@ This class is used to draw the enemies, player, hearts and the random jewels on 
 - **__class DrawImagesOnCanvas {}__**
 
 The enemy class draws the enemies on the canvas. The constructor receives four parameters.
-**__class Enemy extends DrawImagesOnCanvas {}__**
+- **__class Enemy extends DrawImagesOnCanvas {}__**
 
 constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {}
 - __enemy_img_name__ Represent the image to draw the enemies
@@ -44,7 +44,7 @@ constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {}
 
 
 The player class draws the player on the canvas. The constructor receives four parameters.
-**__class Player extends DrawImagesOnCanvas {}__**
+- **__class Player extends DrawImagesOnCanvas {}__**
 
 constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {}
 - __player_img_name__  Represent the image to draw the player
@@ -54,7 +54,7 @@ constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {}
 
 
 The DrawRandomImagesOnCanvas class draws the bonus points and the extra life (heart) randomly.
-**__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
+- **__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
 
 constructor(bonus_img_name, coordinate_x, coordinate_y) {}
 - __bonus_img_name__   Represent the image to draw the bonus
