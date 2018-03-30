@@ -1,7 +1,7 @@
 # Classic-Arcade-Game-Clone
 Project realized during the Udacity Front-End Nano Degree
 
-In this link you can play the game if you want. Play Now!!!
+**_In this link you can play the game if you want._** [Play Now!!!](https://reyniergc.github.io/Classic-Arcade-Game-Clone/)
 
 Main goal of the project memory card.
 
