@@ -9,7 +9,7 @@ The main goal of this project is to create a friendly game where the players can
 enemies to reaches the water blue zone. To win the game the player should reach the blue zone 2 times without collisions with
 the enemies obstacles. When the player win the game appear a modal with information about the number of points and a congratulations text.
 
-On the other hand the player starts with three lives. These lives decrease each time the player collisions with an obstacle or also
+On the other hand, the player starts with three lives. These lives decrease each time the player collisions with an obstacle or also
 increase if the player gets a random heart that appears randomly.
 
 **External Frameworks Dependencies:**
@@ -23,9 +23,7 @@ Css Files:
 
 - css/bootstrap.min.css
 
-A bootstrap modal is used to give the player the possibility to choose a type of player at the beginning of the game, to congratulate the player
-and also to show a message when the player loses all lives.
-The modal also includes a button to close the modal and another one to restart the game.
+A bootstrap modal is used to give the player the possibility to choose a type of player at the beginning of the game, to congratulate the player and also to show a message when the player loses all lives. The modal also includes a button to close the modal and another one to restart the game.
 
 JAVASCRIPT CLASSES AND METHODS EXPLANATION
 
