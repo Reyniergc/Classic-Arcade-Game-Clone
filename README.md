@@ -40,7 +40,7 @@ constructor(enemy_img_name, enemySpeed, coordinate_x, coordinate_y) {}
 - __coordinate_x__   The coordinate x where the enemy will be drawn
 - __coordinate_y__   The coordinate y where the enemy will be drawn
 
-- **__class Enemy extends DrawImagesOnCanvas {}__**
+**__class Enemy extends DrawImagesOnCanvas {}__**
 
 
 The player class draws the player on the canvas. The constructor receives four parameters.
@@ -51,7 +51,7 @@ constructor(player_img_name, coordinate_x, coordinate_y, numberOfLives) {}
 - __coordinate_y__     The coordinate y where the player will be drawn
 - __numberOfLives__    Represent the number of lives available of the player
 
-- **__class Player extends DrawImagesOnCanvas {}__**
+**__class Player extends DrawImagesOnCanvas {}__**
 
 
 The DrawRandomImagesOnCanvas class draws the bonus points and the extra life (heart) randomly.
@@ -61,7 +61,7 @@ constructor(bonus_img_name, coordinate_x, coordinate_y) {}
 - __coordinate_x__     The coordinate x where the bonus will be drawn
 - __coordinate_y__     The coordinate y where the bonus will be drawn
 
-- **__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
+**__class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {}__**
 
 **Please Note**: The enemy, player and DrawRandomImagesOnCanvas class uses the super class DrawImagesOnCanvas and inherits the public
 methods and attributes of the super class to draw the enemy, player and the jewels on canvas.
