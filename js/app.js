@@ -136,8 +136,8 @@ class Player extends DrawImagesOnCanvas {
 }
 
 class DrawRandomImagesOnCanvas extends DrawImagesOnCanvas {
-	constructor(player_img_name, coordinate_x, coordinate_y) {
-		super(player_img_name, coordinate_x, coordinate_y);
+	constructor(bonus_img_name, coordinate_x, coordinate_y) {
+		super(bonus_img_name, coordinate_x, coordinate_y);
 	}
 
 	resetRandomImg(img) {
