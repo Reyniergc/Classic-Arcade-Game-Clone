@@ -69,34 +69,27 @@ var Engine = (function(global) {
         lastTime = Date.now();
         main();
     }
-	
-	function resetPlayer() {
-		player.x = 200;
-		player.y = 400;
-		player.decreaseNumberOfLives();
-		document.getElementById("lives").innerHTML = player.getNumberOfLives();
-	}
-	
+
 	function isCollisions(enemyObj, player) {
 		if (((Math.trunc(enemyObj.x) <= -25) && (Math.trunc(enemyObj.x) < 100))
 			&& ((player.x >= 0) && (player.x < 100))) {
-			resetPlayer();
+			player.resetPlayer();
 		}
 		else if (((Math.trunc(enemyObj.x) >= 60) && (Math.trunc(enemyObj.x) < 200))
 			&& ((player.x >= 100) && (player.x < 200))) {
-			resetPlayer();
+			player.resetPlayer();
 		}
 		else if (((Math.trunc(enemyObj.x) >= 160) && (Math.trunc(enemyObj.x) < 300))
 			&& ((player.x >= 200) && (player.x < 300))) {
-			resetPlayer();
+			player.resetPlayer();
 		}
 		else if (((Math.trunc(enemyObj.x) >= 260) && (Math.trunc(enemyObj.x) < 400))
 			&& ((player.x >= 300) && (player.x < 400))) {
-			resetPlayer();
+			player.resetPlayer();
 		}
 		else if (((Math.trunc(enemyObj.x) >= 360) && (Math.trunc(enemyObj.x) < 400))
 			&& (player.x >= 400)) {
-			resetPlayer();
+			player.resetPlayer();
 		}
 	}
 	

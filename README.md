@@ -2,6 +2,7 @@
 Project realized during the Udacity Front-End Nano Degree
 
 **_In this link you can play the game if you want._** [Play Now!!!](https://reyniergc.github.io/Classic-Arcade-Game-Clone/)
+Also you can load the game locally using the __**index.html**__ file inside the project **Classic Arcade Game Clone**.
 
 **Main goal of the project memory card.**
 
@@ -64,4 +65,3 @@ constructor(bonus_img_name, coordinate_x, coordinate_y) {}
 
 **Please Note**: The enemy, player and DrawRandomImagesOnCanvas class uses the super class DrawImagesOnCanvas and inherits the public
 methods and attributes of the super class to draw the enemy, player and the jewels on canvas.
-

@@ -56,6 +56,14 @@ class Player extends DrawImagesOnCanvas {
 		this.numberOfLives = numberOfLives;
 	}
 
+	/* This method put the player in the initial position on the canvas. */
+	resetPlayer() {
+		player.x = 200;
+		player.y = 400;
+		player.decreaseNumberOfLives();
+		document.getElementById("lives").innerHTML = player.getNumberOfLives();
+	}
+
 	resetVariables() {
 		document.getElementById("bonus").innerHTML = 0;
 		document.getElementById("td1_star").innerHTML = pointsStar;
@@ -80,13 +88,15 @@ class Player extends DrawImagesOnCanvas {
 			this.y = 400;
 			++playerWins;
 		}
-		
+
+		/* Condition to verify if the player lose all the available lives. */
 		if (this.getNumberOfLives() + 1 === 1) {
 			document.getElementById("modalBody").innerHTML = "GAME OVER!!!";
 			document.getElementById("lives").innerHTML = 3;
 			this.resetVariables();
 		}
-		
+
+		/* Condition to verify if the player win the game. */
 		if (playerWins === 2) {
 			document.getElementById("modalBody").innerHTML = "Congratulations!!! You Won the game!!!";
 			document.getElementsByClassName("container")[0].style.visibility = "hidden";
