@@ -17,7 +17,7 @@ let randomNumKey = Math.floor((Math.random() * 15) + 1);
 let createObject = true;
 let clear;
 let coordinateObj = {1: [0, 63, "Heart.png"], 2: [100, 63, "gem-orange.png"], 3: [200, 63, "star.png"], 4: [300, 63, "gem-orange.png"], 5: [400, 63, "gem-blue.png"], 6: [0, 145, "star.png"], 7: [100, 145, "star.png"],
-8: [0, 145, "gem-orange.png"], 9: [300, 145, "star.png"], 10: [400, 145, "gem-orange.png"], 11: [0, 227, "gem-blue.png"], 12: [100, 227, "Heart.png"], 13: [200, 227, "gem-blue.png"], 14: [300, 227, "Heart.png"], 15: [400, 227, "star.png"]}
+8: [0, 145, "gem-orange.png"], 9: [300, 145, "star.png"], 10: [400, 145, "gem-orange.png"], 11: [0, 227, "gem-blue.png"], 12: [100, 227, "Heart.png"], 13: [200, 227, "gem-blue.png"], 14: [300, 227, "Heart.png"], 15: [400, 227, "star.png"]};
 
 
 class DrawImagesOnCanvas {
@@ -58,9 +58,9 @@ class Player extends DrawImagesOnCanvas {
 
 	/* This method put the player in the initial position on the canvas. */
 	resetPlayer() {
-		player.x = 200;
-		player.y = 400;
-		player.decreaseNumberOfLives();
+		this.x = 200;
+		this.y = 400;
+		this.decreaseNumberOfLives();
 		document.getElementById("lives").innerHTML = this.getNumberOfLives();
 	}
 
