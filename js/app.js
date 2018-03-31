@@ -61,7 +61,7 @@ class Player extends DrawImagesOnCanvas {
 		player.x = 200;
 		player.y = 400;
 		player.decreaseNumberOfLives();
-		document.getElementById("lives").innerHTML = player.getNumberOfLives();
+		document.getElementById("lives").innerHTML = this.getNumberOfLives();
 	}
 
 	resetVariables() {
