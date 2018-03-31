@@ -2,6 +2,7 @@
 Project realized during the Udacity Front-End Nano Degree
 
 **_In this link you can play the game if you want._** [Play Now!!!](https://reyniergc.github.io/Classic-Arcade-Game-Clone/)
+
 Also you can load the game locally using the __**index.html**__ file inside the project **Classic Arcade Game Clone**.
 
 **Main goal of the project memory card.**
