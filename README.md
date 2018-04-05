@@ -5,7 +5,7 @@ Project realized during the Udacity Front-End Nano Degree
 
 Also you can load the game locally using the __**index.html**__ file inside the project **Classic Arcade Game Clone**.
 
-**Main goal of the project memory card.**
+**Main goal of the project Classic Arcade Game Clone.**
 
 The main goal of this project is to create a friendly game where the players can move inside a grid and try to avoid the 
 enemies to reaches the water blue zone. To win the game the player should reach the blue zone 2 times without collisions with
